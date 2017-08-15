@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { setItem } from './localstorage';
+import keys from '../keys';
 
 
-
-const BASE_API = 'https://flynk.in/';
+const BASE_API = keys.API_KEY;
 export const LoginUser = (usercreds) => {
 	return axios.post(`${BASE_API}login`, usercreds)
   .then(function (response) {

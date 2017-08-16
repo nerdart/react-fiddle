@@ -4,7 +4,7 @@ import {
   Route
 } from 'react-router-dom';
 import { isAuthenticated } from './localstorage';
-console.log(isAuthenticated());
+
 export const PrivateRoute = ({ component: Dashboard, component: Navbar, ...rest }) => (
     
     <Route {...rest} render={props => (

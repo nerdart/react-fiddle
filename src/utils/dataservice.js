@@ -8,7 +8,7 @@ export const LoginUser = (usercreds) => {
 	return axios.post(`${BASE_API}login`, usercreds)
   .then(function (response) {
   	if(response.data.details) {
-    	var token=setItem(response.data.details.token);
+    	var token=setItem(response.data.details.token, 'token');
     	return response.data.details.token;
     }
   })

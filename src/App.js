@@ -12,6 +12,7 @@ import Signup from './pages/sign-up';
 import Dashboard from './pages/dashboard';
 import Navbar from './Layout/navbar';
 import Logout from './pages/Logout';
+import { PrivateRoute } from './utils/privateroute';
 
 class App extends Component {
   render() {
@@ -24,8 +25,8 @@ class App extends Component {
 		      <Route path="/about" component={About}/>
 		      <Route path="/login" component={Login}/>
 		      <Route path="/signup" component={Signup}/>
-		      <Route path="/dashboard" component={Dashboard}/>
-		      <Route path="/navbar" component={Navbar}/>
+		      <PrivateRoute path="/dashboard" component={Dashboard}/>
+		      <PrivateRoute path="/navbar" component={Navbar}/>
 		      <Route path="/logout" component={Logout}/>
 		    </div>
 		  </Router>

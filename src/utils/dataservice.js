@@ -19,7 +19,6 @@ export const LoginUser = (usercreds) => {
 export const RegisterUser = (userdata) => {
 	axios.post(`${BASE_API}signup`, userdata)
   .then(function (response) {
-  	console.log(response.data.details)
     if(response.data.details) {
     	setItem(response.data.details.token);
     }
@@ -28,15 +27,29 @@ export const RegisterUser = (userdata) => {
     console.log(error);
   });
 }
-export const dashboardData =() =>{
-	axios.get(`${BASE_API}dashboard`)
+export const dashboardData =() => {
+	return axios.get(`${BASE_API}dashboard`)
 	.then(function (response){
 		console.log(response);
+		return response;
 
 	})
 }
-
-export const NavBarData = (url) =>{
+export const profileData = () => {
+	const token = localStorage.token;
+	var config = {
+		headers: {
+			'Authorization': 'Bearer ' + token,
+			'token': token
+		}
+	};
+	return axios.get(`${BASE_API}me`, config)
+		.then(function (response){
+			console.log(response)
+			return response;
+		});
+};
+export const NavBarData = (url) => {
 
 	const token = localStorage.token;
 	console.log(token);
@@ -53,6 +66,23 @@ export const NavBarData = (url) =>{
 	})
 
 }
+export const timeline = (pagenum) => {
+	
+		const token = localStorage.token;
+		var config = {
+					headers: {
+						'Authorization': 'Bearer ' + token,
+						'token': token
+					}
+		 };
+		const postData = { page: pagenum };
+		return axios.post(`${BASE_API}timeline?page=${pagenum}`, postData, config)
+		.then(function(res){
+			console.log(res);
+			return res;
+		})
+	
+	}
 
 
 

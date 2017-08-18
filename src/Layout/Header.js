@@ -14,7 +14,10 @@ const Header = () => {
 
 	if(isAuth) {
 		headerMenu = (
+			<div>
 			<Link className="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" to="/logout">Logout</Link>
+			<Link className="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" to="/profile">Profile</Link>
+			</div>
 		);
 	} else {
 		headerMenu = (

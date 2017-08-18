@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import {
   BrowserRouter as Router,
   Route
@@ -12,6 +13,8 @@ import Signup from './pages/sign-up';
 import Dashboard from './pages/dashboard';
 import Navbar from './Layout/navbar';
 import Logout from './pages/Logout';
+import Timeline from './pages/timeline';
+import ProfileData from './pages/profileData';
 import { PrivateRoute } from './utils/privateroute';
 
 class App extends Component {
@@ -27,6 +30,8 @@ class App extends Component {
 		      <Route path="/signup" component={Signup}/>
 		      <PrivateRoute path="/dashboard" component={Dashboard}/>
 		      <PrivateRoute path="/navbar" component={Navbar}/>
+					<PrivateRoute path="/profile" component={ProfileData}/>
+					<PrivateRoute path="/timeline" component={Timeline}/>
 		      <Route path="/logout" component={Logout}/>
 		    </div>
 		  </Router>

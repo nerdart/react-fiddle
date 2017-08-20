@@ -10,10 +10,12 @@ class Dashboard extends Component{
 
 	render(){
 		return (
-		<div className="dtc v-mid w-75 tr">
-			<Link className="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" to="/dashboard">Dashboard</Link>
-			<Link className="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" to="/navbar">Navbar</Link>
-		</div>
+			<div>
+				<button className="f6 link dim br3 ba bw1 ph3 pv2 mb2 dib dark-gray">
+					
+					<Link className="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" to="/navbar">Add Link</Link>
+				</button>
+			</div>
 		)
 	}
 }

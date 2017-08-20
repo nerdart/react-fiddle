@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import { isAuthenticated } from './localstorage';
 
-export const PrivateRoute = ({ component: Dashboard, component: Navbar, component:ProfileData, component:Timeline, ...rest }) => (
+export const PrivateRoute = ({ component: Dashboard, component: Navbar, component:ProfileData, component:Timeline,component:Scheduled,component:Bookmarks, component:Affiliate, ...rest }) => (
     
     <Route {...rest} render={props => (
         
@@ -13,7 +13,10 @@ export const PrivateRoute = ({ component: Dashboard, component: Navbar, componen
         <Dashboard {...props}/>,
         <Navbar {...props}/>,
         <ProfileData {...props}/>,
-        <Timeline {...props}/>
+        <Timeline {...props}/>,
+        <Scheduled {...props}/>,
+        <Bookmarks {...props}/>,
+        <Affiliate {...props}/>
       ) : (
         <Redirect to={{
           pathname: '/login',

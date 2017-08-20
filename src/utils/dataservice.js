@@ -66,7 +66,7 @@ export const NavBarData = (url) => {
 	})
 
 }
-export const timeline = (pagenum) => {
+export const timeline = (pn) => {
 	
 		const token = localStorage.token;
 		var config = {
@@ -75,8 +75,7 @@ export const timeline = (pagenum) => {
 						'token': token
 					}
 		 };
-		const postData = { page: pagenum };
-		return axios.post(`${BASE_API}timeline?page=${pagenum}`, postData, config)
+		return axios.get(`${BASE_API}timeline?page=${pn}`, config)
 		.then(function(res){
 			console.log(res);
 			return res;
@@ -84,9 +83,49 @@ export const timeline = (pagenum) => {
 	
 	}
 
+export const scheduled = (pn) => {
+	const token = localStorage.token;
+	var config = {
+		headers: {
+			'Authorization' : 'Bearer' +token,
+			'token': token
+		}
+	};
+	return axios.get(`${BASE_API}schedulePost?page=${pn}`, config)
+	.then(function(response){
+			console.log(response.data.next_page);
+			return response;
+	})
+}
 
-
-
+export const bookmarks = (pn) => {
+	const token = localStorage.token;
+	var config = {
+		headers: {
+			'Authorization' : 'Bearer' +token,
+			'token': token
+		}
+	};
+	return axios.get(`${BASE_API}bookmark?page=${pn}`, config)
+		.then(function(response){
+			console.log(response.data.bookmark);
+			return response;
+		})
+}
+export const affiliate = () =>{
+	const token = localStorage.token;
+	var config = {
+		headers: {
+			'Authorization' : 'Bearer' +token,
+			'token': token
+		}
+	};
+	return axios.get(`${BASE_API}aff_param`, config)
+	.then(function(response){
+		console.log(response);
+		return response;
+	})
+}
 
 
 

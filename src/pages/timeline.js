@@ -4,26 +4,35 @@ import { timeline } from '../utils/dataservice';
 class Timeline extends Component{
 constructor(props){
     super(props);
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.state = { links:undefined}
    
 }
-handleInputChange(event){
-    
+componentDidMount(){
+    var _this = this
     timeline("1").then(function(r){
-        console.log(r);
+        _this.setState({
+            links:r.details
+        })
     })
 }
 
 render(){
-    //const { response } = this.state
+    const { links } = this.state
+    if(links){
     return (
-    <div>
-        <a onClick={this.handleInputChange}>
-       Timeline
-        </a>
-        
-    </div>
+        <div className="alignMargin">
+            Timeline Links
+        </div>
     )
+}
+else
+    {
+        return (
+            <div className="alignMargin">
+                No links added yet
+            </div>
+        )
+    }
 }
 
 }

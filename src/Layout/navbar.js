@@ -3,14 +3,14 @@ import { NavBarData } from '../utils/dataservice';
 
 const NavStyles = {
 	LinkInput : {
-		width: '80%',
+		width: '40%',
 		height: '40px',
 		padding: '5px 20px',
 		border: '2px solid #777'
 	},
 	LinkInputWrap: {
 		textAlign: 'center',
-		margin: '0 auto'
+		marginTop: '2rem'
 	},
 	paddingLeft: {
 		paddingLeft : '10px'

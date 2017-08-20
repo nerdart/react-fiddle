@@ -14,7 +14,10 @@ import Dashboard from './pages/dashboard';
 import Navbar from './Layout/navbar';
 import Logout from './pages/Logout';
 import Timeline from './pages/timeline';
+import Scheduled from './pages/scheduled';
+import Bookmarks from './pages/bookmarks';
 import ProfileData from './pages/profileData';
+import Affiliate from './pages/affiliate';
 import { PrivateRoute } from './utils/privateroute';
 
 class App extends Component {
@@ -32,6 +35,9 @@ class App extends Component {
 		      <PrivateRoute path="/navbar" component={Navbar}/>
 					<PrivateRoute path="/profile" component={ProfileData}/>
 					<PrivateRoute path="/timeline" component={Timeline}/>
+					<PrivateRoute path="/scheduled" component={Scheduled}/>
+					<PrivateRoute path="/bookmarks" component={Bookmarks}/>
+					<PrivateRoute path="/affiliate" component={Affiliate}/>
 		      <Route path="/logout" component={Logout}/>
 		    </div>
 		  </Router>

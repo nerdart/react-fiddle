@@ -11,7 +11,7 @@ componentDidMount(){
     var _this = this
     timeline("1").then(function(r){
         _this.setState({
-            links:r.details
+            links:r.data.details
         })
     })
 }

@@ -18,6 +18,7 @@ import Scheduled from './pages/scheduled';
 import Bookmarks from './pages/bookmarks';
 import ProfileData from './pages/profileData';
 import Affiliate from './pages/affiliate';
+import AffCreate from './pages/createAff';
 import { PrivateRoute } from './utils/privateroute';
 
 class App extends Component {
@@ -38,6 +39,7 @@ class App extends Component {
 					<PrivateRoute path="/scheduled" component={Scheduled}/>
 					<PrivateRoute path="/bookmarks" component={Bookmarks}/>
 					<PrivateRoute path="/affiliate" component={Affiliate}/>
+					<PrivateRoute path="/aff-create" component={AffCreate}/>
 		      <Route path="/logout" component={Logout}/>
 		    </div>
 		  </Router>

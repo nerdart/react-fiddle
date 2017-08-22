@@ -12,7 +12,7 @@ componentDidMount(){
     var _this = this;
     scheduled("1").then(function(r){
         _this.setState({
-            scheduledLinks:r.details
+            scheduledLinks:r.data.schedule_posts
         })
     })
 }

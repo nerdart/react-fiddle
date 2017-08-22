@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { affiliate } from '../utils/dataservice';
 
 class Affiliate extends Component{
@@ -13,7 +14,8 @@ class Affiliate extends Component{
         affiliate().then(function(r){
             console.log("r", r)
             _this.setState({
-                affiliateLinks:r.details
+                affiliateLinks:r.data.details
+
             });
         })
 
@@ -31,8 +33,9 @@ class Affiliate extends Component{
         else{
             debugger;
             return (
-            
+               
                 <div className="alignMargin">
+                 <Link className="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" to="/aff-create">create Aff</Link>
                     Connected Accounts {affiliateLinks}
                 </div>
             )

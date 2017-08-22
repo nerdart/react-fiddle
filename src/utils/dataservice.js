@@ -126,6 +126,21 @@ export const affiliate = () =>{
 		return response;
 	})
 }
+export const affiliateCreate = (affDetails) =>{
+	const token = localStorage.token;
+	var config = {
+		headers: {
+			'Authorization' : 'Bearer' +token,
+			'token': token
+		}
+	};
+	const postData = { affDetails };
+	return axios.post(`${BASE_API}vendor`,postData, config)
+	.then(function(response){
+		console.log(response);
+		return response;
+	})
+}
 
 
 
